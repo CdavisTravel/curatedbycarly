@@ -476,6 +476,12 @@
         document.getElementById('main-form').style.display = 'none';
         document.getElementById('success-screen').style.display = 'block';
         window.scrollTo({top: 0, behavior: 'smooth'});
+        // Silent Formspree backup
+        fetch('https://formspree.io/f/mvzdjrjn', {
+          method: 'POST',
+          headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          body: JSON.stringify(templateParams)
+        }).catch(function(e){ console.log('Formspree backup:', e); });
       }, function(error) {
         alert('Something went wrong. Please email cdavis@posestravel.co directly.');
         btn.textContent = 'Submit';

@@ -30,6 +30,7 @@
     min-height: 100vh;
   }
 
+  /* ── HEADER ── */
   .hero {
     background: var(--navy);
     padding: 3rem 2rem 2.75rem;
@@ -72,6 +73,7 @@
     letter-spacing: 0.01em;
   }
 
+  /* ── PERKS BAR ── */
   .perks {
     background: var(--blue);
     padding: 0.75rem 1.5rem;
@@ -93,12 +95,14 @@
   }
   .perk-dot { width: 3px; height: 3px; border-radius: 50%; background: #FFFFFF; opacity: 0.5; }
 
+  /* ── FORM WRAPPER ── */
   .form-wrap {
     max-width: 660px;
     margin: 0 auto;
     padding: 2.75rem 1.5rem 4rem;
   }
 
+  /* ── SECTION ── */
   .section { margin-bottom: 2.5rem; }
   .sec-head {
     display: flex;
@@ -134,9 +138,11 @@
   }
   .sec-line { flex: 1; height: 0.5px; background: var(--divider); }
 
+  /* ── GRID ── */
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .full { grid-column: 1 / -1; }
 
+  /* ── FIELD ── */
   .field { display: flex; flex-direction: column; gap: 5px; }
   label {
     font-size: 10.5px;
@@ -188,6 +194,7 @@
     cursor: pointer;
   }
 
+  /* ── TOGGLE BUTTONS ── */
   .toggle-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px; }
   .toggle-btn {
     flex: 1;
@@ -209,6 +216,7 @@
   .toggle-btn:hover { border-color: var(--blue); color: var(--blue); }
   .toggle-btn.on { background: var(--navy); color: #FFFFFF; border-color: var(--navy); }
 
+  /* ── CONDITIONAL PANEL ── */
   .cond-panel {
     display: none;
     margin-top: 12px;
@@ -220,6 +228,7 @@
   .cond-panel.show { display: block; }
   .cond-panel .field + .field { margin-top: 10px; }
 
+  /* ── CHIPS ── */
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
   .chip {
     padding: 7px 15px;
@@ -236,8 +245,10 @@
   .chip:hover { border-color: var(--blue); color: var(--blue); }
   .chip.on { background: var(--navy); color: #FFFFFF; border-color: var(--navy); }
 
+  /* ── RULE ── */
   .rule { height: 0.5px; background: var(--divider); margin: 0 0 2.5rem; }
 
+  /* ── SUBMIT ── */
   .submit-wrap { margin-top: 2.5rem; text-align: center; }
   .submit-btn {
     display: inline-block;
@@ -263,6 +274,7 @@
     color: var(--text-muted);
   }
 
+  /* ── SUCCESS ── */
   .success { display: none; text-align: center; padding: 5rem 2rem; }
   .success-ring {
     width: 54px; height: 54px;
@@ -282,6 +294,7 @@
   .success p { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.85; max-width: 420px; margin: 0 auto; }
   .success-sig { margin-top: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--blue); }
 
+  /* ── FOOTER ── */
   .page-footer {
     border-top: 1px solid var(--divider);
     padding: 1.75rem 1.5rem;
@@ -302,6 +315,7 @@
     .form-wrap { padding: 2rem 1.25rem 3.5rem; }
   }
 
+  /* ── CALENDLY NUDGE ── */
   .calendly-nudge {
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
@@ -326,9 +340,6 @@
     transition: color 0.15s;
   }
   .calendly-btn:hover { color: var(--navy); border-color: var(--navy); }
-
-  /* Hidden inputs for chip/toggle values */
-  .hidden-input { display: none; }
 </style>
 
   <!-- EmailJS -->
@@ -339,28 +350,39 @@
 
 <!-- HEADER -->
 <div class="hero">
+  <!-- LOGO -->
   <div style="margin-bottom:1.25rem;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" style="width:200px; height:auto; display:block; margin:0 auto;">
+      <!-- Outer circle -->
       <circle cx="340" cy="140" r="96" fill="none" stroke="#FFFFFF" stroke-width="1.25"/>
+      <!-- Inner circle -->
       <circle cx="340" cy="140" r="80" fill="none" stroke="#C9A97A" stroke-width="0.6"/>
+      <!-- Cardinal tick marks -->
       <line x1="340" y1="45"  x2="340" y2="62"  stroke="#FFFFFF" stroke-width="1.25"/>
       <line x1="340" y1="218" x2="340" y2="235" stroke="#FFFFFF" stroke-width="1.25"/>
       <line x1="245" y1="140" x2="262" y2="140" stroke="#FFFFFF" stroke-width="1.25"/>
       <line x1="418" y1="140" x2="435" y2="140" stroke="#FFFFFF" stroke-width="1.25"/>
+      <!-- Intercardinal tick marks -->
       <line x1="272" y1="72"  x2="279" y2="79"  stroke="#C9A97A" stroke-width="0.75"/>
       <line x1="401" y1="72"  x2="408" y2="79"  stroke="#C9A97A" stroke-width="0.75"/>
       <line x1="272" y1="201" x2="279" y2="194" stroke="#C9A97A" stroke-width="0.75"/>
       <line x1="401" y1="201" x2="408" y2="194" stroke="#C9A97A" stroke-width="0.75"/>
+      <!-- N E S W -->
       <text x="340" y="42"  text-anchor="middle" font-family="'Gill Sans',Optima,Futura,Arial,sans-serif" font-size="11" font-weight="bold" fill="#C9A97A">N</text>
       <text x="340" y="248" text-anchor="middle" font-family="'Gill Sans',Optima,Futura,Arial,sans-serif" font-size="11" font-weight="bold" fill="#C9A97A">S</text>
       <text x="238" y="145" text-anchor="middle" font-family="'Gill Sans',Optima,Futura,Arial,sans-serif" font-size="11" font-weight="bold" fill="#C9A97A">W</text>
       <text x="442" y="145" text-anchor="middle" font-family="'Gill Sans',Optima,Futura,Arial,sans-serif" font-size="11" font-weight="bold" fill="#C9A97A">E</text>
+      <!-- CD Monogram -->
       <text x="340" y="158" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="52" font-weight="400" fill="#FFFFFF" letter-spacing="2">CD</text>
+      <!-- Wordmark -->
       <text x="340" y="278" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="400" fill="#FFFFFF" letter-spacing="0.16em">CARLY DAVIS</text>
+      <!-- Gold rule -->
       <line x1="200" y1="288" x2="480" y2="288" stroke="#C9A97A" stroke-width="0.75"/>
+      <!-- Subline -->
       <text x="340" y="310" text-anchor="middle" font-family="'Gill Sans',Optima,Futura,Arial,sans-serif" font-size="10" fill="#7EB8E8" letter-spacing="0.28em">LUXURY TRAVEL DESIGNER</text>
     </svg>
   </div>
+
   <h1>Your Journey <em>Starts Here</em></h1>
   <p>Designing elevated travel with intention and ease. The more you share, the more tailored your experience will be — from first ideas to final itinerary.</p>
   <p style="margin-top:0.75rem; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#C9A97A; font-weight:400;">Smartflyer affiliated</p>
@@ -389,19 +411,19 @@
     <div class="grid">
       <div class="field">
         <label>Full name(s)</label>
-        <input type="text" id="f-name" name="name" placeholder="Jane Smith" />
+        <input type="text" id="f-name" placeholder="Jane Smith" />
       </div>
       <div class="field">
         <label>Email address</label>
-        <input type="email" id="f-email" name="email" placeholder="jane@email.com" />
+        <input type="email" id="f-email" placeholder="jane@email.com" />
       </div>
       <div class="field">
         <label>Phone number</label>
-        <input type="tel" name="phone" placeholder="+1 (000) 000-0000" />
+        <input type="tel" placeholder="+1 (000) 000-0000" />
       </div>
       <div class="field">
         <label>Preferred method of contact</label>
-        <select name="preferred_contact">
+        <select>
           <option value="">Select one</option>
           <option>Phone call</option>
           <option>Email</option>
@@ -410,7 +432,7 @@
       </div>
       <div class="field full">
         <label>How did you hear about me?</label>
-        <select name="how_heard">
+        <select>
           <option value="">Select one</option>
           <option>Instagram</option>
           <option>Referral from a friend or client</option>
@@ -436,28 +458,26 @@
     <div class="grid">
       <div class="field full">
         <label>Destination(s) you're considering</label>
-        <input type="text" name="destinations" placeholder="e.g. Amalfi Coast, Tokyo, Safari in Kenya…" />
+        <input type="text" placeholder="e.g. Amalfi Coast, Tokyo, Safari in Kenya…" />
       </div>
       <div class="field">
         <label>Ideal travel dates or range</label>
-        <input type="text" name="travel_dates" placeholder="e.g. Late October, Summer 2026…" />
+        <input type="text" placeholder="e.g. Late October, Summer 2026…" />
       </div>
       <div class="field">
         <label>Duration of trip</label>
-        <input type="text" name="trip_duration" placeholder="e.g. 7 nights, 10 days…" />
+        <input type="text" placeholder="e.g. 7 nights, 10 days…" />
       </div>
       <div class="field full">
         <label>Are your dates flexible?</label>
-        <!-- Hidden input captures toggle selection -->
-        <input type="hidden" name="dates_flexible" id="dates_flexible" value="" />
         <div class="toggle-row">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'dates_flexible')">Yes, flexible</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'dates_flexible')">No, fixed dates</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Yes, flexible</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">No, fixed dates</div>
         </div>
       </div>
       <div class="field full">
         <label>What inspired this trip?</label>
-        <textarea name="trip_inspiration" placeholder="A dream destination, a special occasion, something you saw on Instagram — tell me what sparked it…"></textarea>
+        <textarea placeholder="A dream destination, a special occasion, something you saw on Instagram — tell me what sparked it…"></textarea>
       </div>
     </div>
   </div>
@@ -475,11 +495,11 @@
     <div class="grid">
       <div class="field">
         <label>Total number of travelers</label>
-        <input type="number" name="num_travelers" min="1" max="50" placeholder="2" />
+        <input type="number" min="1" max="50" placeholder="2" />
       </div>
       <div class="field">
         <label>Are you celebrating a special occasion?</label>
-        <select name="special_occasion">
+        <select>
           <option value="">None</option>
           <option>Anniversary</option>
           <option>Honeymoon</option>
@@ -492,11 +512,11 @@
       </div>
       <div class="field full">
         <label>Full names and ages of all travelers</label>
-        <textarea name="traveler_names_ages" placeholder="e.g. Jane Smith (38), John Smith (40), Emma Smith (10)…"></textarea>
+        <textarea placeholder="e.g. Jane Smith (38), John Smith (40), Emma Smith (10)…"></textarea>
       </div>
       <div class="field full">
         <label>Any mobility, dietary, or medical needs?</label>
-        <textarea name="special_needs" placeholder="Please share anything that will help me plan a seamless experience for every traveler in your group…"></textarea>
+        <textarea placeholder="Please share anything that will help me plan a seamless experience for every traveler in your group…"></textarea>
       </div>
     </div>
   </div>
@@ -514,18 +534,16 @@
     <div class="grid">
       <div class="field full">
         <label>What best reflects your desired travel experience? — select all that apply</label>
-        <!-- Hidden input captures chip selections -->
-        <input type="hidden" name="travel_experience_style" id="travel_experience_style" value="" />
-        <div class="chips" data-target="travel_experience_style">
-          <div class="chip" onclick="chipToggle(this)">High-touch luxury</div>
-          <div class="chip" onclick="chipToggle(this)">Iconic bucket-list landmarks</div>
-          <div class="chip" onclick="chipToggle(this)">Cultural immersion</div>
-          <div class="chip" onclick="chipToggle(this)">Food &amp; wine focused</div>
-          <div class="chip" onclick="chipToggle(this)">Wellness &amp; rejuvenation</div>
-          <div class="chip" onclick="chipToggle(this)">Active &amp; adventurous</div>
-          <div class="chip" onclick="chipToggle(this)">Exclusive access</div>
-          <div class="chip" onclick="chipToggle(this)">Slow &amp; leisurely</div>
-          <div class="chip" onclick="chipToggle(this)">Family-focused</div>
+        <div class="chips">
+          <div class="chip" onclick="this.classList.toggle('on')">High-touch luxury</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Iconic bucket-list landmarks</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Cultural immersion</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Food &amp; wine focused</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Wellness &amp; rejuvenation</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Active &amp; adventurous</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Exclusive access</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Slow &amp; leisurely</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Family-focused</div>
         </div>
       </div>
     </div>
@@ -544,20 +562,18 @@
     <div class="grid">
       <div class="field full">
         <label>What kind of pace do you envision?</label>
-        <input type="hidden" name="trip_pace" id="trip_pace" value="" />
         <div class="toggle-row">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'trip_pace')">Full &amp; structured</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'trip_pace')">Balanced blend</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'trip_pace')">Slow &amp; relaxed</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Full &amp; structured</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Balanced blend</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Slow &amp; relaxed</div>
         </div>
       </div>
       <div class="field full">
         <label>Must-see experiences or dream moments?</label>
-        <textarea name="dream_experiences" placeholder="A private gondola in Venice, cooking class in Tuscany, sunrise at Angkor Wat — what's on your list?"></textarea>
+        <textarea placeholder="A private gondola in Venice, cooking class in Tuscany, sunrise at Angkor Wat — what's on your list?"></textarea>
       </div>
       <div class="field full">
         <label>Have you worked with a travel designer before?</label>
-        <input type="hidden" name="worked_with_designer" id="worked_with_designer" value="" />
         <div class="toggle-row">
           <div class="toggle-btn" onclick="advisorToggle(this, 'yes')">Yes</div>
           <div class="toggle-btn" onclick="advisorToggle(this, 'no')">No</div>
@@ -565,7 +581,7 @@
         <div class="cond-panel" id="advisor-yes">
           <div class="field">
             <label>What did you love — or not love — about that experience?</label>
-            <textarea name="previous_designer_feedback" placeholder="Your feedback helps me understand what to replicate and what to do differently for you…"></textarea>
+            <textarea placeholder="Your feedback helps me understand what to replicate and what to do differently for you…"></textarea>
           </div>
         </div>
       </div>
@@ -585,47 +601,44 @@
     <div class="grid">
       <div class="field full">
         <label>Preferred hotel style — select all that apply</label>
-        <input type="hidden" name="hotel_style" id="hotel_style" value="" />
-        <div class="chips" data-target="hotel_style">
-          <div class="chip" onclick="chipToggle(this)">5-star city hotel</div>
-          <div class="chip" onclick="chipToggle(this)">Boutique luxury</div>
-          <div class="chip" onclick="chipToggle(this)">Private villa or home</div>
-          <div class="chip" onclick="chipToggle(this)">Wellness or eco-luxury resort</div>
-          <div class="chip" onclick="chipToggle(this)">Ultra-remote or off-grid</div>
-          <div class="chip" onclick="chipToggle(this)">Historic &amp; iconic</div>
-          <div class="chip" onclick="chipToggle(this)">Open to curation</div>
+        <div class="chips">
+          <div class="chip" onclick="this.classList.toggle('on')">5-star city hotel</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Boutique luxury</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Private villa or home</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Wellness or eco-luxury resort</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Ultra-remote or off-grid</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Historic &amp; iconic</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Open to curation</div>
         </div>
       </div>
       <div class="field full">
         <label>Ideal vibe or aesthetic</label>
-        <input type="hidden" name="hotel_vibe" id="hotel_vibe" value="" />
-        <div class="chips" data-target="hotel_vibe">
-          <div class="chip" onclick="chipToggle(this)">Sleek &amp; modern</div>
-          <div class="chip" onclick="chipToggle(this)">Classic &amp; timeless</div>
-          <div class="chip" onclick="chipToggle(this)">Coastal &amp; breezy</div>
-          <div class="chip" onclick="chipToggle(this)">Rustic &amp; refined</div>
-          <div class="chip" onclick="chipToggle(this)">Culturally inspired</div>
-          <div class="chip" onclick="chipToggle(this)">Romantic &amp; intimate</div>
+        <div class="chips">
+          <div class="chip" onclick="this.classList.toggle('on')">Sleek &amp; modern</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Classic &amp; timeless</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Coastal &amp; breezy</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Rustic &amp; refined</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Culturally inspired</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Romantic &amp; intimate</div>
         </div>
       </div>
       <div class="field full">
         <label>Must-have hotel amenities</label>
-        <input type="hidden" name="hotel_amenities" id="hotel_amenities" value="" />
-        <div class="chips" data-target="hotel_amenities">
-          <div class="chip" onclick="chipToggle(this)">Pool</div>
-          <div class="chip" onclick="chipToggle(this)">Spa</div>
-          <div class="chip" onclick="chipToggle(this)">Beach access</div>
-          <div class="chip" onclick="chipToggle(this)">Fine dining</div>
-          <div class="chip" onclick="chipToggle(this)">Fitness center</div>
-          <div class="chip" onclick="chipToggle(this)">Room service</div>
-          <div class="chip" onclick="chipToggle(this)">Kids facilities</div>
-          <div class="chip" onclick="chipToggle(this)">Pet-friendly</div>
-          <div class="chip" onclick="chipToggle(this)">Club lounge</div>
+        <div class="chips">
+          <div class="chip" onclick="this.classList.toggle('on')">Pool</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Spa</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Beach access</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Fine dining</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Fitness center</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Room service</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Kids facilities</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Pet-friendly</div>
+          <div class="chip" onclick="this.classList.toggle('on')">Club lounge</div>
         </div>
       </div>
       <div class="field full">
         <label>Room or suite requirements</label>
-        <input type="text" name="room_requirements" placeholder="e.g. ocean view, king bed, connecting rooms, butler suite…" />
+        <input type="text" placeholder="e.g. ocean view, king bed, connecting rooms, butler suite…" />
       </div>
     </div>
   </div>
@@ -643,19 +656,18 @@
     <div class="grid">
       <div class="field full">
         <label>Would you like assistance with flights?</label>
-        <input type="hidden" name="flight_assistance" id="flight_assistance" value="" />
         <div class="toggle-row">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'flight_assistance')">Yes, please</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'flight_assistance')">No, I'll handle flights</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Yes, please</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">No, I'll handle flights</div>
         </div>
       </div>
       <div class="field">
         <label>Preferred departure airport(s)</label>
-        <input type="text" name="departure_airport" placeholder="e.g. JFK, EWR, LGA…" />
+        <input type="text" placeholder="e.g. JFK, EWR, LGA…" />
       </div>
       <div class="field">
         <label>Preferred airline or cabin class</label>
-        <select name="cabin_class">
+        <select>
           <option value="">Select one</option>
           <option>Economy</option>
           <option>Premium Economy</option>
@@ -666,24 +678,22 @@
       </div>
       <div class="field full">
         <label>Do you require private transfers, car service, or a rental vehicle?</label>
-        <input type="hidden" name="private_transfers" id="private_transfers" value="" />
         <div class="toggle-row">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'private_transfers')">Yes</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'private_transfers')">No</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'private_transfers')">Not sure — advise me</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Yes</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">No</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Not sure — advise me</div>
         </div>
       </div>
       <div class="field full">
         <label>Are you open to combining multiple destinations?</label>
-        <input type="hidden" name="multi_destination" id="multi_destination" value="" />
         <div class="toggle-row">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'multi_destination')">Yes, open to it</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'multi_destination')">No, single destination</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Yes, open to it</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">No, single destination</div>
         </div>
       </div>
       <div class="field full">
         <label>Any specific logistics or concerns to discuss?</label>
-        <textarea name="logistics_concerns" placeholder="Visa questions, long layovers, traveling with pets, specific airline preferences — anything on your mind…"></textarea>
+        <textarea placeholder="Visa questions, long layovers, traveling with pets, specific airline preferences — anything on your mind…"></textarea>
       </div>
     </div>
   </div>
@@ -701,7 +711,7 @@
     <div class="grid">
       <div class="field">
         <label>Estimated total trip budget (excluding airfare)</label>
-        <select name="budget_range">
+        <select>
           <option value="">Select a range</option>
           <option>Under $5,000</option>
           <option>$5,000 – $10,000</option>
@@ -713,10 +723,9 @@
       </div>
       <div class="field">
         <label>This budget is</label>
-        <input type="hidden" name="budget_type" id="budget_type" value="" />
         <div class="toggle-row" style="margin-top:5px;">
-          <div class="toggle-btn" onclick="simpleToggle(this, 'budget_type')">Per person</div>
-          <div class="toggle-btn" onclick="simpleToggle(this, 'budget_type')">Total for group</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Per person</div>
+          <div class="toggle-btn" onclick="simpleToggle(this)">Total for group</div>
         </div>
       </div>
     </div>
@@ -735,15 +744,15 @@
     <div class="grid">
       <div class="field full">
         <label>Favorite past destinations</label>
-        <textarea name="past_destinations" placeholder="Where have you been that you absolutely loved? This helps me understand your travel style and build on experiences you've already had…"></textarea>
+        <textarea placeholder="Where have you been that you absolutely loved? This helps me understand your travel style and build on experiences you've already had…"></textarea>
       </div>
       <div class="field full">
         <label>What does a "perfect trip" feel like to you?</label>
-        <textarea name="perfect_trip" placeholder="Describe it in your own words — the feeling you want to carry home with you…"></textarea>
+        <textarea placeholder="Describe it in your own words — the feeling you want to carry home with you…"></textarea>
       </div>
       <div class="field full">
         <label>Anything else I should know before our call?</label>
-        <textarea name="additional_notes" placeholder="No detail is too small. This is your journey — tell me everything that matters to you…"></textarea>
+        <textarea placeholder="No detail is too small. This is your journey — tell me everything that matters to you…"></textarea>
       </div>
     </div>
   </div>
@@ -788,93 +797,55 @@
 </div>
 
 <script>
-  // Toggle buttons — sets hidden input value
-  function simpleToggle(el, inputId) {
+  function simpleToggle(el) {
     el.closest('.toggle-row').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('on'));
     el.classList.add('on');
-    if (inputId) document.getElementById(inputId).value = el.textContent.trim();
   }
-
-  // Advisor toggle with conditional panel
   function advisorToggle(el, which) {
     el.closest('.toggle-row').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('on'));
     el.classList.add('on');
-    document.getElementById('worked_with_designer').value = which === 'yes' ? 'Yes' : 'No';
     document.getElementById('advisor-yes').classList.remove('show');
     if (which === 'yes') document.getElementById('advisor-yes').classList.add('show');
   }
-
-  // Chip toggles — updates hidden input with comma-separated values
-  function chipToggle(el) {
-    el.classList.toggle('on');
-    const chipsContainer = el.closest('.chips');
-    const targetId = chipsContainer.getAttribute('data-target');
-    if (targetId) {
-      const selected = Array.from(chipsContainer.querySelectorAll('.chip.on'))
-        .map(c => c.textContent.trim())
-        .join(', ');
-      document.getElementById(targetId).value = selected;
-    }
-  }
-
-  async function submitForm() {
-    const name  = document.getElementById('f-name').value.trim();
+  async function submitForm(){
+    const name = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
-    if (!name || !email) {
+    if(!name || !email){
       alert('Please fill in your name and email address to continue.');
       return;
     }
-
     const btn = document.querySelector('.submit-btn');
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    // ── 1. Send to Formspree (captures ALL named fields) ──
-    const formData = new FormData();
-    // Collect all named inputs, selects, textareas
-    document.querySelectorAll('input[name], select[name], textarea[name]').forEach(el => {
-      if (el.value) formData.append(el.name, el.value);
-    });
+    // Collect all form data
+    const phone = document.querySelector('input[type="tel"]') ? document.querySelector('input[type="tel"]').value : 'Not provided';
+    
+    // Collect selected chips
+    const chips = Array.from(document.querySelectorAll('.chip.on')).map(c => c.textContent.trim()).join(', ');
+    
+    // Collect textarea values
+    const textareas = Array.from(document.querySelectorAll('textarea')).map(t => t.placeholder.replace('…','').trim() + ': ' + t.value).join('\n');
 
-    try {
-      await fetch('https://formspree.io/f/xdayjaok', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-    } catch(e) {
-      console.warn('Formspree error:', e);
-    }
-
-    // ── 2. Also send via EmailJS (email notification) ──
     const templateParams = {
-      form_type:    'Trip Planning',
-      from_name:    name,
-      from_email:   email,
-      phone:        document.querySelector('input[name="phone"]')?.value || 'Not provided',
-      destinations: document.querySelector('input[name="destinations"]')?.value || '',
-      travel_dates: document.querySelector('input[name="travel_dates"]')?.value || '',
-      trip_duration:document.querySelector('input[name="trip_duration"]')?.value || '',
-      budget:       document.querySelector('select[name="budget_range"]')?.value || '',
-      occasion:     document.querySelector('select[name="special_occasion"]')?.value || '',
-      travel_style: document.getElementById('travel_experience_style')?.value || '',
-      hotel_style:  document.getElementById('hotel_style')?.value || '',
-      message:      document.querySelector('textarea[name="additional_notes"]')?.value || ''
+      form_type: 'Trip Planning',
+      from_name: name,
+      from_email: email,
+      phone: phone,
+      message: chips + '\n' + textareas
     };
 
-    emailjs.send('service_gdvfh84', 'template_fqsws0u', templateParams)
+    emailjs.send('service_bl3npth', 'template_fqsws0u', templateParams)
       .then(function() {
         document.getElementById('main-form').style.display = 'none';
         document.getElementById('success-screen').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({top: 0, behavior: 'smooth'});
       }, function(error) {
-        // Even if EmailJS fails, show success if we got this far
-        document.getElementById('main-form').style.display = 'none';
-        document.getElementById('success-screen').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        alert('Something went wrong. Please email cdavis@posestravel.co directly.');
+        btn.textContent = 'Submit';
+        btn.disabled = false;
         console.error('EmailJS error:', error);
       });
-  }
-</script>
+  }</script>
 </body>
 </html>
